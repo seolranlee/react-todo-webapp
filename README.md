@@ -1,6 +1,6 @@
 # react-todo-webapp
 
-[구현 화면](http://110.10.189.209:3030/assets/video/todoapp.mp4)
+[구현 화면](http://110.10.189.209:3030/assets/video/react-todo-webapp.mp4)
 
 ## Getting Started
 

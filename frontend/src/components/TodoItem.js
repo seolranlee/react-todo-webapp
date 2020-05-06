@@ -30,7 +30,7 @@ const TodoItem = ({
         .map(item => item.parent_id)
         .sort((a, b) => a - b)
     );
-  }, []);
+  }, [relationship]);
 
   const toggleEdit = (e, id) => {
     e.stopPropagation();
