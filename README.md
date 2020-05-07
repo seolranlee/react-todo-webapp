@@ -143,13 +143,13 @@ PUT /todos/:id/done
 새로운 todo 추가
 
 ```
-POST /todos/new
+POST /todo
 ```
 
 엑셀 파일 업로드 후 데이터 추가
 
 ```
-POST /todos/uploadfile
+POST /upload
 ```
 
 ### TODO 삭제

@@ -50,7 +50,7 @@ export async function createTodo(newTodo, parents) {
   };
   let response;
   try {
-    response = await axios.post(`http://localhost:8080/todos/new`, payload);
+    response = await axios.post(`http://localhost:8080/todo`, payload);
   } catch (error) {
     console.log(error);
   }
@@ -69,7 +69,7 @@ export async function uploadFile(file) {
   };
   try {
     response = await axios.post(
-      `http://localhost:8080/todos/uploadfile`,
+      `http://localhost:8080/upload`,
       formData,
       config
     );

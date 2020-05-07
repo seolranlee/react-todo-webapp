@@ -23,8 +23,8 @@ const Router = app => {
   app.get("/todos/:id/relationship", (req, res) => Todo.relation(req, res));
   app.put("/todos/:id/done", (req, res) => Todo.toggleDone(req, res));
   app.put("/todos/:id", (req, res) => Todo.updateTodo(req, res));
-  app.post("/todos/new", (req, res) => Todo.createTodo(req, res));
-  app.post("/todos/uploadfile", upload.single("file"), (req, res) =>
+  app.post("/todo", (req, res) => Todo.createTodo(req, res));
+  app.post("/upload", upload.single("file"), (req, res) =>
     Todo.uploadFile(req, res)
   );
   app.delete("/todos/:id", (req, res) => Todo.deleteTodo(req, res));
