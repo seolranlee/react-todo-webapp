@@ -170,10 +170,10 @@ DELETE /todos/:id
 DELETE /todos/relation/children/:id
 ```
 
-- id: 누군가를 참조하는 (과제 예시상에서는 todo 4) todo들 중 해당 id의 todo 가 지니고 있는 모든 참조관계 삭제
+- id: 누군가를 참조하는 todo들 중 해당 id의 todo 가 지니고 있는 모든 참조관계 삭제
 
 ```
 DELETE /todos/relation/parent/:id
 ```
 
-- id: 누군가에게 참조 당하는 (과제 예시상에서는 todo 1,3) todo 들 중 해당 id의 todo 가 지니고 있는 모든 참조관계 삭제
+- id: 누군가에게 참조 당하는 todo 들 중 해당 id의 todo 가 지니고 있는 모든 참조관계 삭제
