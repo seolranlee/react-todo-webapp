@@ -25,15 +25,12 @@ export async function fetchTodos(params) {
 
 export async function getTodo(id) {
   let response;
-  await axios
-    .get(`http://localhost:8080/todos/${id}`)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.get(`http://localhost:8080/todos/${id}`);
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 export async function fetchRelationship() {
@@ -52,15 +49,12 @@ export async function createTodo(newTodo, parents) {
     data: [newTodo, { parents }]
   };
   let response;
-  await axios
-    .post(`http://localhost:8080/todos/new`, payload)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.post(`http://localhost:8080/todos/new`, payload);
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 // UPLOAD
@@ -73,15 +67,16 @@ export async function uploadFile(file) {
       "content-type": "multipart/form-data"
     }
   };
-  await axios
-    .post(`http://localhost:8080/todos/uploadfile`, formData, config)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.post(
+      `http://localhost:8080/todos/uploadfile`,
+      formData,
+      config
+    );
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 // UPDATE
@@ -90,79 +85,67 @@ export async function editTodo(id, todo, remove) {
     data: [todo, { remove: remove }]
   };
   let response;
-  await axios
-    .put(`http://localhost:8080/todos/${id}`, payload)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.put(`http://localhost:8080/todos/${id}`, payload);
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 export async function todoRelationCheck(id) {
   let response;
-  await axios
-    .get(`http://localhost:8080/todos/${id}/relationship`)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.get(
+      `http://localhost:8080/todos/${id}/relationship`
+    );
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 export async function toggleDone(id, done) {
   let response;
-  await axios
-    .put(`http://localhost:8080/todos/${id}/done`, done)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.put(`http://localhost:8080/todos/${id}/done`, done);
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 // DELETE
 export async function deleteTodo(id) {
   let response;
-  await axios
-    .delete(`http://localhost:8080/todos/${id}`)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.delete(`http://localhost:8080/todos/${id}`);
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 export async function deleteChildren(id) {
   let response;
-  await axios
-    .delete(`http://localhost:8080/todos/relation/children/${id}`)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.delete(
+      `http://localhost:8080/todos/relation/children/${id}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
 
 export async function deleteParent(id) {
   let response;
-  await axios
-    .delete(`http://localhost:8080/todos/relation/parent/${id}`)
-    .then(res => {
-      response = res.data;
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  return response;
+  try {
+    response = await axios.delete(
+      `http://localhost:8080/todos/relation/parent/${id}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
+  return response.data;
 }
