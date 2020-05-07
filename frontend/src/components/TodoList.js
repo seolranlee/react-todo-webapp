@@ -23,34 +23,36 @@ const TodoList = ({
       </div>
     );
   return (
-    <Table stackable>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Status</Table.HeaderCell>
-          <Table.HeaderCell width={6}>Text</Table.HeaderCell>
-          <Table.HeaderCell>Date</Table.HeaderCell>
-          <Table.HeaderCell width={3} textAlign="right"></Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
+    <div className="todo-list">
+      <Table stackable>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Status</Table.HeaderCell>
+            <Table.HeaderCell width={6}>Text</Table.HeaderCell>
+            <Table.HeaderCell>Date</Table.HeaderCell>
+            <Table.HeaderCell width={3} textAlign="right"></Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
 
-      <Table.Body>
-        {todos.todos.map(todo => (
-          <TodoItem
-            key={todo.todo_id}
-            todos={todos}
-            item={todo}
-            editMode={editMode}
-            setEditMode={setEditMode}
-            focus={focus}
-            setFocus={setFocus}
-            relationship={relationship}
-            handleToggle={handleToggle}
-            handleEdit={handleEdit}
-            handleRemove={handleRemove}
-          />
-        ))}
-      </Table.Body>
-    </Table>
+        <Table.Body>
+          {todos.todos.map(todo => (
+            <TodoItem
+              key={todo.todo_id}
+              todos={todos}
+              item={todo}
+              editMode={editMode}
+              setEditMode={setEditMode}
+              focus={focus}
+              setFocus={setFocus}
+              relationship={relationship}
+              handleToggle={handleToggle}
+              handleEdit={handleEdit}
+              handleRemove={handleRemove}
+            />
+          ))}
+        </Table.Body>
+      </Table>
+    </div>
   );
 };
 

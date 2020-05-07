@@ -44,52 +44,44 @@ const TodoCreate = ({ handleCreate }) => {
   };
 
   return (
-    <Form onSubmit={onSubmit} style={{ marginBottom: "30px" }}>
-      <Form.Field>
-        <label>Add todo Item</label>
-        <input
-          placeholder="Add todo Item"
-          value={value}
-          onChange={({ target: { value } }) => setValue(value)}
-          onKeyPress={handleKeyPress}
-        />
-      </Form.Field>
-      <Form.Field>
-        <div className="ref-todo-list">
-          {/* 코드수정>오름차순 */}
-          {parents
-            .sort((a, b) => a - b)
-            .map(parent => {
-              return (
-                <Label image key={parent} color="blue">
-                  @{parent}{" "}
-                </Label>
-              );
-            })}
-          {/* 코드수정>오름차순 */}
-        </div>
-        <label>참조 ID(한개 씩 추가)</label>
-        <Input type="text" placeholder="Search..." action>
+    <div className="todo-create">
+      <Form onSubmit={onSubmit} style={{ marginBottom: "30px" }}>
+        <Form.Field>
+          <label>Add todo Item</label>
           <input
-            placeholder="참조 ID(한개 씩 추가)"
-            type="number"
-            min="1"
-            value={parentValue}
-            onChange={({ target: { value } }) => setParentValue(value)}
+            placeholder="Add todo Item"
+            value={value}
+            onChange={({ target: { value } }) => setValue(value)}
+            onKeyPress={handleKeyPress}
           />
-          <Button onClick={addParents}>참조 ID(한개 씩 추가)</Button>
-        </Input>
-        {/* <Input
-          action="참조 ID(한개 씩 추가)"
-          placeholder="참조 ID(한개 씩 추가)"
-          type="number"
-          min="1"
-          value={parentValue}
-          onChange={({ target: { value } }) => setParentValue(value)}
-        /> */}
-      </Form.Field>
-      <Button type="submit">Todo Item 추가</Button>
-    </Form>
+        </Form.Field>
+        <Form.Field>
+          <div className="ref-todo-list">
+            {parents
+              .sort((a, b) => a - b)
+              .map(parent => {
+                return (
+                  <Label image key={parent} color="blue">
+                    @{parent}{" "}
+                  </Label>
+                );
+              })}
+          </div>
+          <label>참조 ID(한개 씩 추가)</label>
+          <Input type="text" placeholder="Search..." action>
+            <input
+              placeholder="참조 ID(한개 씩 추가)"
+              type="number"
+              min="1"
+              value={parentValue}
+              onChange={({ target: { value } }) => setParentValue(value)}
+            />
+            <Button onClick={addParents}>참조 ID(한개 씩 추가)</Button>
+          </Input>
+        </Form.Field>
+        <Button type="submit">Todo Item 추가</Button>
+      </Form>
+    </div>
   );
 };
 

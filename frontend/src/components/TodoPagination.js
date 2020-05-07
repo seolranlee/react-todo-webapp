@@ -15,7 +15,7 @@ const TodoPagination = ({ todos, setParams }) => {
   if (todos.todos.length === 0) return <div className="pagination"></div>;
   return (
     <Container textAlign="center">
-      <Menu pagination>
+      <Menu pagination className="todo-pagination">
         <Menu.Item
           type="prevItem"
           className={todos.page === 1 ? "disabled item" : "item"}
