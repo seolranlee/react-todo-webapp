@@ -1,6 +1,6 @@
 # react-todo-webapp
 
-[구현 화면](http://110.10.189.209:3030/assets/video/react-todo-webapp.mp4)
+[구현 화면](https://www.loom.com/share/9f17593c96514609be112f966706976b)
 
 ## Getting Started
 
