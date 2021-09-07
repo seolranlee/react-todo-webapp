@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as API from "../util/TodoAPI";
 import { Button, Label, Form, Input } from "semantic-ui-react";
 const TodoCreate = ({ handleCreate }) => {
-  useEffect(() => {
-    // console.log("TodoCreate 렌더링");
-  });
   const [value, setValue] = useState("");
   const [parents, setParents] = useState([]);
   const [parentValue, setParentValue] = useState("");
