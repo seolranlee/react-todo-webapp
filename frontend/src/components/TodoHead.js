@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Button, Icon } from "semantic-ui-react";
 const TodoHead = ({ todos, params, setParams, handleUpload, isShow }) => {
   const [file, setFile] = useState({});
@@ -7,10 +7,6 @@ const TodoHead = ({ todos, params, setParams, handleUpload, isShow }) => {
     setFile(e.target.files[0]);
     fileRef.current.value = e.target.files[0].name;
   };
-  useEffect(() => {
-    // console.log("TodoHead 렌더링");
-  });
-
   const onSubmit = e => {
     e.preventDefault();
     handleUpload(file);
@@ -35,7 +31,7 @@ const TodoHead = ({ todos, params, setParams, handleUpload, isShow }) => {
           window.location.reload();
         }}
       >
-        TODO WebApp
+        참조 관계를 지닌 할 일 리스트
       </h1>
       <div className="btn-holder">
         <div className="btn-file-group">

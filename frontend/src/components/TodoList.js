@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import { Table } from "semantic-ui-react";
 
@@ -11,10 +11,6 @@ const TodoList = ({
 }) => {
   const [editMode, setEditMode] = useState(false);
   const [focus, setFocus] = useState(null);
-
-  useEffect(() => {
-    console.log("TodoList 렌더링");
-  });
 
   if (todos.todos.length === 0)
     return (

@@ -40,7 +40,6 @@ const App = () => {
   };
 
   const getRelationship = async () => {
-    // console.log("getRelationship");
     let response;
     try {
       response = await API.fetchRelationship();
@@ -237,10 +236,6 @@ const App = () => {
   useEffect(() => {
     getRelationship();
   }, []);
-
-  useEffect(() => {
-    console.log("App 렌더링");
-  });
 
   if (error) return <div class="error">에러가 발생했습니다</div>;
 

@@ -19,9 +19,6 @@ const TodoItem = ({
   const [parents, setParents] = useState(null);
   const [removeParents, setRemoveParents] = useState([]);
   useEffect(() => {
-    console.log("TodoItem 렌더링");
-  });
-  useEffect(() => {
     setParents(
       relationship
         .filter(item => {
